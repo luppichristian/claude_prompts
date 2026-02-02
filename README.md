@@ -1,21 +1,22 @@
 # Claude Code Custom Commands for C/C++ Projects
 
-Reusable prompts for claude code.
+Reusable prompts for Claude Code.
 
 ## Installation
 
 ```bash
-# Clone the repository
 git clone https://github.com/YOUR_USERNAME/claude_prompts.git
+cd claude_prompts
+```
 
-# Symlink to Claude Code's global commands directory
-# Linux/macOS
-ln -s $(pwd)/claude_prompts/*.md ~/.claude/commands/
+**Unix:**
+```bash
+./install-unix.sh
+```
 
-# Windows (PowerShell as Admin)
-Get-ChildItem "C:\path\to\claude_prompts\*.md" | ForEach-Object {
-    New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\commands\$($_.Name)" -Target $_.FullName
-}
+**Windows (PowerShell as Admin):**
+```powershell
+.\install-windows.ps1
 ```
 
 ## Available Commands
