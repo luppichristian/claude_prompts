@@ -9,15 +9,14 @@ git clone https://github.com/YOUR_USERNAME/claude_prompts.git
 cd claude_prompts
 ```
 
-**Unix:**
-```bash
-./install-unix.sh
-```
+**Unix:**: 
 
-**Windows (PowerShell as Admin):**
-```powershell
-.\install-windows.ps1
-```
+`./setup-unix.sh`
+
+**Windows:**: 
+
+`./setup-windows.ps1` or `./setup-windows.bat`
+
 
 ## Available Commands
 
