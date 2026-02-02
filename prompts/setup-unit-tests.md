@@ -7,9 +7,13 @@ Set up unit tests for this project following these guidelines:
 2. If none exists, default to **GoogleTest** for C/C++ projects
 
 ## Project Structure
+**Create separate test files - do NOT put all tests in a single file**
+
 - Place all test files in `tests/` unless otherwise specified
-- Create one test file per module: for `parser.h`/`parser.cpp`, create `tests/test_parser.cpp`
+- **Create one test file per module/class**: for `parser.h`/`parser.cpp`, create `tests/test_parser.cpp`
+- For `logger.h`/`logger.cpp`, create `tests/test_logger.cpp`, etc.
 - Mirror the source directory structure in tests if the project uses subdirectories
+- **Never** create a single `tests/test_all.cpp` or `tests/main_test.cpp` with all tests combined
 
 ## Build System Integration
 - For CMake projects, ensure all tests are discoverable via **CTest**
