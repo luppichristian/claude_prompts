@@ -1,6 +1,6 @@
-# Claude Code Custom Commands for C/C++ Projects
+# Claude Code Custom Commands
 
-Reusable prompts for Claude Code.
+Reusable prompts for Claude Code that i find useful.
 
 ## Installation
 
