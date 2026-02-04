@@ -5,8 +5,9 @@ Generate a comprehensive README.md and documentation in `docs/` directory.
 ## Before Writing Docs
 1. Read all public headers to understand the API
 2. Check existing documentation to maintain consistency
-3. Review examples for usage patterns to document
+3. Review examples for usage patterns to document (if present)
 4. Identify the project name, dependencies, and build requirements
+5. Check for CLI utility to document (if present)
 
 ## README.md Format
 Create a project README following this structure:
@@ -43,35 +44,6 @@ and what problem it solves.
 | BUILD_TESTS | ON | Build test suite |
 | BUILD_EXAMPLES | ON | Build example programs |
 
-## Quick Start
-
-```bash
-# Clone and build
-git clone https://github.com/user/project.git
-cd project
-cmake -B build
-cmake --build build
-
-# Run tests
-ctest --test-dir build
-
-# Install
-cmake --install build
-```
-
-## Usage
-
-Brief code example showing the most common use case:
-
-```c
-// Minimal example
-#include "library.h"
-
-int main(void) {
-    // Show basic usage
-}
-```
-
 ## Documentation
 
 See [docs](https://user.github.io/project/) for comprehensive API documentation and usage patterns.
@@ -88,11 +60,13 @@ MIT License - see [LICENSE](LICENSE)
 ## Documentation Directory Structure
 ```
 docs/
-├── index.md          # Overview and quick start
+├── index.md          # Overview and quick start (picked up by github pages)
 ├── getting-started.md # Installation and basic usage
-├── api/
+├── _config.yml
+├── modules/
 │   └── <module>.md   # One file per public module
-└── examples.md       # Links to and explains examples
+├── examples.md       # Links to and explains examples (if present)
+└── cli.md            # CLI utility documentation (if present)
 ```
 
 ## Module Documentation Format
@@ -139,6 +113,17 @@ Brief description.
 - Link between related modules/functions
 
 ## GitHub Pages Setup
-- Add workflow file `.github/workflows/docs.yml` for automatic deployment
-- Configure to build from `docs/` on main branch
-- Use Jekyll or static markdown hosting
+1. Create `docs/_config.yml`:
+   ```yaml
+   title: "Project Name Documentation"
+   theme: jekyll-theme-cayman
+   baseurl: "/repository-name"
+   ```
+2. Add front matter to each `.md` file:
+   ```markdown
+   ---
+   layout: default
+   title: Page Title
+   ---
+   ```
+3. Enable in GitHub: **Settings** → **Pages** → Source: `main` branch, `/docs` folder
