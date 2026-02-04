@@ -100,10 +100,8 @@ Brief description.
 
 **Notes:** (if applicable) edge cases, thread safety, memory ownership, etc.
 
-**Example:**
-```c
-// minimal usage
-```
+**Example:** (minimal usage)
+
 ```
 
 ## Style Guidelines
